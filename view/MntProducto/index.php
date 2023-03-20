@@ -233,37 +233,19 @@
             <!-- Main content -->
             <section class="content">
 
-                <!-- <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Title</h3>
-
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        Start creating your amazing application!
-                    </div>
-                    <div class="card-footer">
-                        Footer
-                    </div>
-                </div> -->
-
                 <div class="px-2">
                     <p>Desde esta ventana podrá dar mantenimiento a productos</p>
                 </div>
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Mantenimiento de Producto</h3>
+                        <h2 class="card-title text-uppercase font-weight-bold">Mantenimiento de Producto</h2>
+                    </div>
+                    <div class="card-body py-1">
+                            <button id="btn-nuevo" type="button" class="btn btn-block btn-outline-primary">Nuevo Registro</button>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
+                    <div class="card-body py-1">
                         <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6"></div>
@@ -310,6 +292,8 @@
     </div>
     <!-- ./wrapper -->
 
+    <?php require_once("./modalmantenimiento.php");?>
+
     <!-- jQuery -->
     <script src="../../public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -330,6 +314,8 @@
     <script src="../../public/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="../../public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script type="text/javascript" src="./mntproducto.js"></script>
 </body>

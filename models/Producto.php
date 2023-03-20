@@ -20,7 +20,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        public function delete_producto_x_id($prod_id){
+        public function delete_producto($prod_id){
             $conectar = parent::Conexion();
             parent::set_names();
             $sql="UPDATE tm_producto 
@@ -36,7 +36,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        public function insert_producto_x_id($prod_name){
+        public function insert_producto($prod_name){
             $conectar = parent::Conexion();
             parent::set_names();
             $sql="INSERT INTO tm_producto (prod_id, prod_name, fech_create, fech_mod, fech_delete, estado) VALUES (NULL, ?, now(), NULL, NULL, 1);";
@@ -46,7 +46,7 @@
             return $resultado=$sql->fetchAll();
         }
 
-        public function update_producto_x_id($prod_id, $prod_name){
+        public function update_producto($prod_id, $prod_name){
             $conectar = parent::Conexion();
             parent::set_names();
             $sql="UPDATE tm_producto 
