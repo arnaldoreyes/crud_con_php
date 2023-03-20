@@ -58,28 +58,35 @@ $(document).ready(function () {
     }).DataTable();
 });
 
-function guardaryeditar(e) {
+function guardaryeditar(e){
     e.preventDefault();
     var formData = new FormData($("#producto_form")[0]);
 
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success mx-1',
+            cancelButton: 'btn btn-danger mx-1'
+        },
+        buttonsStyling: false
+    })
+
     $.ajax({
-        url: "../../controller/producto.php?op=guardaryeditar",
+        url: "../../controller/producto.php?op=guardar_y_editar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
         success: function(datos){
             console.log(datos);
-            // $('#area_form')[0].reset();
-            // $('#modalmantenimiento').modal('hide');
-            // $('#area_data').DataTable().ajax.reload();
+            $('#producto_form')[0].reset();
+            $("#modalmantenimiento").modal('hide');
+            $('#producto_data').DataTable().ajax.reload();
 
-            // swal({
-            //     title: "HelpDesk!",
-            //     type: "Completado.",
-            //     type: "success",
-            //     confirmButtonClass: "btn-success"
-            // });
+            swalWithBootstrapButtons.fire(
+                'Registro!',
+                'El registro se inserto correctamente.',
+                'success'
+            )
         }
     });
 }
