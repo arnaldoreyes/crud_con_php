@@ -79,7 +79,7 @@ function guardaryeditar(e){
         success: function(datos){
             console.log(datos);
             $('#producto_form')[0].reset();
-            $("#modalmantenimiento").modal('hide');
+            $("#modal-mantenimiento").modal('hide');
             $('#producto_data').DataTable().ajax.reload();
 
             swalWithBootstrapButtons.fire(
@@ -92,7 +92,15 @@ function guardaryeditar(e){
 }
 
 function editar(prod_id) {
-    console.log(prod_id);
+    $('#mdl-titulo').html('Editar Registro');
+
+    $.post("../../controller/producto.php?op=mostrar",{prod_id : prod_id},function (data) {
+        data = JSON.parse(data);
+        $('#prod_id').val(data.prod_id);
+        $('#prod_name').val(data.prod_name);
+    })
+
+    $('#modal-mantenimiento').modal('show');
 }
 
 function eliminar(prod_id) {
@@ -141,6 +149,8 @@ function eliminar(prod_id) {
 
 $(document).on("click", "#btn-nuevo", function () {
     $('#mdl-titulo').html('Nuevo Registro');
+    $('#producto_form')[0].reset();
+    $('#prod_id').val('');
     $('#modal-mantenimiento').modal('show');
 });
 

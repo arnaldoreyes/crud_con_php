@@ -38,11 +38,12 @@
 
         case "mostrar":
             $datos=$producto->get_producto_x_id($_POST["prod_id"]);
-            if(is_array($datos)==true and count($datos)==0){
+            if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row){
                     $output["prod_id"] = $row["prod_id"];
                     $output["prod_name"] = $row["prod_name"];
                 }
+                echo json_encode($output);
             }
         break;
 
