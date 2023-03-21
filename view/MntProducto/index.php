@@ -61,6 +61,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Nombre</th>
+                                                <th>Descripción</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>

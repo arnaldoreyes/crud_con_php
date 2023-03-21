@@ -20,12 +20,12 @@
                         <input type="text" class="form-control" id="prod_name" name="prod_name" placeholder="Ingrese Nombre" required>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label class="form-label" for="prod_desc">Descripcion</label>
-                        <textarea type="text" rows="3" class="form-control" id="prod_desc" name="prod_desc" placeholder="Ingrese Descripcion" required></textarea>
-                    </div>
-
                     <div class="form-group">
+                        <label class="form-label" for="prod_desc">Descripción</label>
+                        <textarea type="text" rows="3" class="form-control" id="prod_desc" name="prod_desc" placeholder="Ingrese Descripción" required></textarea>
+                    </div>
+                    
+                    <!-- <div class="form-group">
                         <label class="form-label" for="prod_cant">Cantidad</label>
                         <input type="number" class="form-control" id="prod_cant" name="prod_cant" placeholder="Ingrese Cantidad" required>
                     </div> -->
