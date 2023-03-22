@@ -8,6 +8,10 @@ function init() {
 
 $(document).ready(function () {
 
+    $.post("../../controller/categoria.php?op=category",function (data) {
+        $("#cat_id").html(data);
+    });
+
     tabla = $('#producto_data').dataTable({
         "aProcessing": true,//Activamos el procesamiento del datatables
         "aServerSide": true,//Paginación y filtrado realizados por el servidor
@@ -92,15 +96,14 @@ function guardaryeditar(e){
 }
 
 function editar(prod_id) {
-    $('#mdl-titulo').html('Editar Registro');
-
     $.post("../../controller/producto.php?op=mostrar",{prod_id : prod_id},function (data) {
         data = JSON.parse(data);
         $('#prod_id').val(data.prod_id);
+        $('#cat_id').val(data.cat_id).trigger('change');
         $('#prod_name').val(data.prod_name);
         $('#prod_desc').val(data.prod_desc);
     })
-
+    $('#mdl-titulo').html('Editar Registro');
     $('#modal-mantenimiento').modal('show');
 }
 
@@ -149,9 +152,14 @@ function eliminar(prod_id) {
 }
 
 $(document).on("click", "#btn-nuevo", function () {
-    $('#mdl-titulo').html('Nuevo Registro');
     $('#producto_form')[0].reset();
+
     $('#prod_id').val('');
+    $('#cat_id').val('').trigger('change');
+    $('#prod_name').val('');
+    $('#prod_desc').val('');
+
+    $('#mdl-titulo').html('Nuevo Registro');
     $('#modal-mantenimiento').modal('show');
 });
 

@@ -8,12 +8,11 @@
                 <div class="modal-body pd-25">
                     <input type="hidden" id="prod_id" name="prod_id">
 
-                    <!-- <div class="form-group">
-                        <label class="form-label" for="cat_id">Categoria</label>
-                        <select class="form-control select2" id="cat_id" name="cat_id" data-placeholder="Seleccione" style="width: 100%">
- 
+                    <div class="form-group">
+                        <label class="form-label" for="cat_id">Categoría</label>
+                        <select class="form-control select2" id="cat_id" name="cat_id">
                         </select>
-                    </div> -->
+                    </div>
 
                     <div class="form-group">
                         <label class="form-label" for="prod_name">Nombre</label>

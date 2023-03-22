@@ -60,6 +60,7 @@
                                     <table id="producto_data" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
                                         <thead>
                                             <tr>
+                                                <th>Categoría</th>
                                                 <th>Nombre</th>
                                                 <th>Descripción</th>
                                                 <th></th>
